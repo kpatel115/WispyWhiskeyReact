@@ -1,19 +1,15 @@
-from flask import Flask, Blueprint, request, render_template, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from helpers import token_required
 from models import db, User, Whiskey, whiskey_schema, whiskeys_schema
 
-app = Flask(__name__, static_folder="site", template_folder="site/site_templates")
 api = Blueprint('api', __name__, url_prefix='/api')
-@app.route('/')
-def index():
-    return render_template("index.html")
 
-@app.route('/whiskeydata', methods=['GET'])
+# Works
+@api.route('/whiskeydata')
 def getdata():
-    data = {'no more': 'pecan pie'}
-    return jsonify(data)
+    return{'Texas': 'Ranger'}
 
-@app.route('/whiskeys', methods = ['POST'])
+@api.route('/whiskeys', methods = ['POST'])
 @token_required
 def create_whiskey(current_user_token):
     name = request.json['name']
@@ -37,7 +33,7 @@ def create_whiskey(current_user_token):
     response = whiskey_schema.dump(whiskey)
     return jsonify(response)
 
-@app.route('/whiskeys', methods = ['GET'])
+@api.route('/whiskeys', methods = ['GET'])
 @token_required
 def get_whiskey(current_user_token):
     a_user = current_user_token.token
@@ -45,7 +41,7 @@ def get_whiskey(current_user_token):
     response = whiskeys_schema.dump(whiskeys)
     return jsonify(response)
 
-@app.route('/whiskeys/<id>', methods = ['GET'])
+@api.route('/whiskeys/<id>', methods = ['GET'])
 @token_required
 def get_whiskey_two(current_user_token, id):
     newt = current_user_token.token
@@ -58,7 +54,7 @@ def get_whiskey_two(current_user_token, id):
     
 
 # update endpoint
-@app.route('/whiskeys/<id>', methods = ['POST', 'PUT'])
+@api.route('/whiskeys/<id>', methods = ['POST', 'PUT'])
 @token_required
 def update_whiskey(current_user_token, id):
     req = request.get_json()
@@ -79,7 +75,7 @@ def update_whiskey(current_user_token, id):
     return jsonify(response)
 
 # delete endpoint
-@app.route('/whiskeys/<id>', methods = ['DELETE'])
+@api.route('/whiskeys/<id>', methods = ['DELETE'])
 @token_required
 def delete_whiskey(current_user_token, id):
     whiskey = Whiskey.query.get(id)
@@ -88,6 +84,4 @@ def delete_whiskey(current_user_token, id):
     response = whiskey_schema.dump(whiskey)
     return jsonify(response)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    
+
