@@ -5,10 +5,11 @@ from models import db, User, Whiskey, whiskey_schema, whiskeys_schema
 api = Blueprint('api', __name__, url_prefix='/api')
 
 # Works
-@api.route('/whiskeydata')
+@api.route('/data')
 def getdata():
-    return{'Texas': 'Ranger'}
+    return{'pecan': 'pie'}
 
+# Create / POST 
 @api.route('/whiskeys', methods = ['POST'])
 @token_required
 def create_whiskey(current_user_token):
@@ -32,7 +33,7 @@ def create_whiskey(current_user_token):
 
     response = whiskey_schema.dump(whiskey)
     return jsonify(response)
-
+# Read / GET
 @api.route('/whiskeys', methods = ['GET'])
 @token_required
 def get_whiskey(current_user_token):
@@ -40,7 +41,7 @@ def get_whiskey(current_user_token):
     whiskeys = Whiskey.query.filter_by(user_token = a_user).all()
     response = whiskeys_schema.dump(whiskeys)
     return jsonify(response)
-
+# Read / GET - Specific ID
 @api.route('/whiskeys/<id>', methods = ['GET'])
 @token_required
 def get_whiskey_two(current_user_token, id):
