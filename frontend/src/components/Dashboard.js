@@ -23,9 +23,10 @@ const Dashboard = () => {
       };
 
     return (
-        <div className='flex flex-column w-full bg-red-50 m-5'>
-            <button className='m-9 w-2 h-1 bg-blue-200 text-slate-300' onClick={getData}></button>
-            {/* <DataCard className='m-9'/> */}
+        <div className=''>
+            <button className='w-9 h-9 bg-slate-500 text-slate-300' onClick={getData}>Data</button>
+            <DataCard className='m-9'/>
+            
         </div>
     );
 };

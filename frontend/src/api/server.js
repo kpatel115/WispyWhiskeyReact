@@ -6,7 +6,7 @@ export const server_calls = {
         {
             method: 'GET',
             mode: "cors",
-            header: {
+            headers: {
                 'Content-Type':'application/json',
                 'x-access-token':`Bearer ${token}`,
             },

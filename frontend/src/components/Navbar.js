@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 // stuck on how to render the login and logoout and correct pages for react
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand bg-light navbar-light py-3 fixed-top">
-      <Link to='/' className='navbar bg-slate-400'>
+    <nav className="bg-slate-500">
+      <Link to='/' className='bg-slate-400'>
         Whiskey
       </Link>
       <div>
