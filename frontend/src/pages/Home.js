@@ -4,12 +4,11 @@ import Navbar from '../components/Navbar'; // Adjust the path accordingly
 import Dashboard from '../components/Dashboard'
 
 
-export const Home = (props) => {
+export const Home = () => {
 
   return (
     <div>
-      <Navbar urlFor={props.urlFor} isLoggedIn={props.isLoggedIn} />
-      {props.children}
+      <Navbar/>
       <Dashboard/>
     </div>
   );

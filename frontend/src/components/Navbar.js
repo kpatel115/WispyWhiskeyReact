@@ -1,41 +1,22 @@
 // Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from './Button'
-import urlFor from '../utility-function/urlFor'
 
 
-const Navbar = ({isLoggedIn, loadData }) => {
+// stuck on how to render the login and logoout and correct pages for react
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand bg-light navbar-light py-3 fixed-top">
-      <Link to={urlFor('site.home')} className="navbar-brand">
-        Whiskey Collection
+      <Link to='/' className='navbar bg-slate-400'>
+        Whiskey
       </Link>
-      {/* ... (rest of your navigation code) */}
-      {isLoggedIn ? (
-        <li className="nav-item">
-          <Link to={urlFor('auth.logout')} className="nav-link">
-            Logout
-          </Link>
-        </li>
-      ) : (
-        <>
-          <li className="nav-item">
-            <Link to={urlFor('auth.signin')} className="nav-link">
-              Sign In
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={urlFor('auth.signup')} className="nav-link">
-              Sign Up
-            </Link>
-          </li>
-          <li>
-                <Button onClick={loadData} className="mr-4">Load Data</Button>
-            </li>
-        </>
-      )}
-      {/* ... (rest of your navigation code) */}
+      <div>
+        <ul>
+          <li>Info</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
     </nav>
   );
 };

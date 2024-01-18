@@ -41,6 +41,7 @@ def get_whiskey(current_user_token):
     whiskeys = Whiskey.query.filter_by(user_token = a_user).all()
     response = whiskeys_schema.dump(whiskeys)
     return jsonify(response)
+
 # Read / GET - Specific ID
 @api.route('/whiskeys/<id>', methods = ['GET'])
 @token_required
