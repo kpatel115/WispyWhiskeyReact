@@ -20,9 +20,7 @@ const bull = (
     •
   </Box>
 );
-const DataCard = ({ id }) => {
-
-    const { drinkData, getData } = useGetData(id);
+const DataCard = ( {data, getData, onEdit, onDelete}) => {
   
     return (
       <Card sx={{ minWidth: 275 }}>
@@ -31,36 +29,42 @@ const DataCard = ({ id }) => {
             Whiskey Drink Collection
           </Typography>
           <Typography variant="h5" component="div">
-            {drinkData ? drinkData.name : 'Loading...'}
+            {data && data.name }
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {drinkData ? drinkData.category : 'Loading...'}
+          {data && data.category}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {drinkData ? drinkData.distillery : 'Loading...'}
+          {data && data.distilery }
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {drinkData ? drinkData.bottler : 'Loading...'}
+          {data && data.bottler }
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {drinkData ? drinkData.bottling_series : 'Loading...'}
+          {data && data.bottling_series }
           </Typography>
           <Typography variant="body2">
-            {drinkData ? drinkData.size : 'Loading...'}
+          {data && data.size }
           </Typography>
           <Typography variant="body2">
-            {drinkData ? drinkData.strength : 'Loading...'}
+          {data && data.strength }
           </Typography>
           <Typography variant="body2">
-            {drinkData ? drinkData.year_bottled : 'Loading...'}
+          {data && data.year_bottled }
           </Typography>
           <Typography variant="body2">
-            {drinkData ? drinkData.notes : 'Loading...'}
+          {data && data.notes }
           </Typography>
         </CardContent>
         <CardActions>
           <Button size="small" onClick={getData}>
             Refresh Data
+          </Button>
+          <Button size="small" onClick={() => onEdit(data)}>
+            Edit Drink
+          </Button>
+          <Button size="small" onClick={() => onDelete(data)}>
+            Delete Drink
           </Button>
         </CardActions>
       </Card>
