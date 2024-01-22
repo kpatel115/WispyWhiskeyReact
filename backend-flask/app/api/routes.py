@@ -13,16 +13,27 @@ def getdata():
 @api.route('/whiskeys', methods = ['POST'])
 @token_required
 def create_whiskey(current_user_token):
-    name = request.json['name']
-    category = request.json['category']
-    distillery = request.json['distillery']
-    bottler = request.json['bottler']
-    bottling_series = request.json['bottling_series']
-    year_bottled = request.json['year_bottled']
-    strength = request.json['strength']
-    size = request.json['size']
-    notes = request.json['notes']
+    data = request.get_json()
+    name = data.get('name')
+    category = data.get('category')
+    distillery = data.get('distillery')
+    bottler = data.get('bottler')
+    bottling_series = data.get('bottling_series')
+    year_bottled = data.get('year_bottled')
+    strength = data.get('strength')
+    size = data.get('size')
+    notes = data.get('notes')
+
+    # category = request.json['category']
+    # distillery = request.json['distillery']
+    # bottler = request.json['bottler']
+    # bottling_series = request.json['bottling_series']
+    # year_bottled = request.json['year_bottled']
+    # strength = request.json['strength']
+    # size = request.json['size']
+    # notes = request.json['notes']
     user_token = current_user_token.token
+    
 
     print(f'SuperTest (token): {current_user_token.token}')
 
@@ -56,7 +67,7 @@ def get_whiskey_two(current_user_token, id):
     
 
 # update endpoint
-@api.route('/whiskeys/<id>', methods = ['POST', 'PUT'])
+@api.route('/whiskeys/<id>', methods = ['POST'])
 @token_required
 def update_whiskey(current_user_token, id):
     req = request.get_json()

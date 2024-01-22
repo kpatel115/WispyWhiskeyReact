@@ -3,10 +3,10 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/Navbar'
+
 import Home from './pages/Home';
 // import Profile from './Profile';
-// import Signin from './Signin';
+import Signin from './pages/Signin';
 // import Signup from './Signup';
 
 const App = () => {
@@ -16,7 +16,8 @@ const App = () => {
 
         <Provider store={store}>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/collection' element={<Home />} />
+            <Route path='/' element={<Signin />} />
           </Routes>
         </Provider>
       </Router>
