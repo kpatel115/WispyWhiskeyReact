@@ -44,7 +44,7 @@ const Dashboard = () => {
   // Ability to Update A Drink
   const handleUpdateDrink = async (drinkId, updatedDrink) => {
     try {
-      const updatedDrinkData = await server_calls.update('whiskey', drinkId, updatedDrink);
+      const updatedDrinkData = await server_calls.update( drinkId, updatedDrink);
       setData(data.map(drink => (drink.id === drinkId ? updatedDrinkData : drink)));
       setIsModalVisible(false);
       setSelectedDrink(null);
@@ -62,7 +62,7 @@ const Dashboard = () => {
       }
 
       // Use the server_calls.delete method to delete a drink
-      await server_calls.delete('whiskeys', drinkId);
+      await server_calls.delete(drinkId);
 
       // Assuming deletion is successful, update the state
       setData(data.filter((drink) => drink.id !== drinkId));

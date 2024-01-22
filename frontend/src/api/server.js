@@ -2,11 +2,9 @@ const token = 'f6d5050a3ee2a77dd8912cf1cd1eff71d10e7e61d6d6a545';
 const API_BASE_URL ='http://localhost:3000'
 export const server_calls = {
 
-    
--
     get: async () => {
         // will need to update this to a backend server like render.io after development
-        const response = await fetch(`'http://127.0.0.1:5000/api/whiskeys'`,
+        const response = await fetch('http://127.0.0.1:5000/api/whiskeys',
             {
                 method: 'GET',
                 mode: "cors",
@@ -31,7 +29,7 @@ export const server_calls = {
 
                 headers: {
                     'Content-Type': 'application/json',
-
+                    'x-access-token': `Bearer ${token}`,
                 },
                 body: JSON.stringify(data)
             });
