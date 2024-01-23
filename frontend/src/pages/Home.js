@@ -7,9 +7,9 @@ import Dashboard from '../components/Dashboard'
 export const Home = () => {
 
   return (
-    <div>
+    <div className="min-h-screen bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/background4.jpg')"}} >
       <Navbar/>
-      <Dashboard/>
+      <Dashboard className="flex items-center justify-center"/>
     </div>
   );
 };
