@@ -7,7 +7,7 @@ import DataCard from './DataCard';
 
 
 
-const drinkData = server_calls.get()
+// const drinkData = server_calls.get()
 // const drinkId = drinkData[0]
 
 
