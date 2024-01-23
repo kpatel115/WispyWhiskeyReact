@@ -1,10 +1,10 @@
 const token = 'f6d5050a3ee2a77dd8912cf1cd1eff71d10e7e61d6d6a545';
-// const API_BASE_URL ='http://localhost:3000'
+const API_BASE_URL ='https://wispywhiskeyreactbackend.onrender.com'
 export const server_calls = {
 
     get: async () => {
         // will need to update this to a backend server like render.io after development
-        const response = await fetch('http://127.0.0.1:5000/api/whiskeys',
+        const response = await fetch(`${API_BASE_URL}/api/whiskeys`,
             {
                 method: 'GET',
                 mode: "cors",
@@ -23,7 +23,7 @@ export const server_calls = {
     create: async (data) => {
         console.log(data)
         // will need to update this to a backend server like render.io after development
-        const response = await fetch('http://127.0.0.1:5000/api/whiskeys',
+        const response = await fetch(`${API_BASE_URL}/api/whiskeys`,
             {
                 method: 'POST',
 
@@ -41,7 +41,7 @@ export const server_calls = {
     },
     update: async (e, id, data) => {
         e.preventDefault()
-        const response = await fetch(`http://127.0.0.1:5000/api/whiskeys/${id}`,
+        const response = await fetch(`${API_BASE_URL}/api/whiskeys/${id}`,
             {
                 method: 'PUT',
                 mode: "cors",
@@ -59,7 +59,7 @@ export const server_calls = {
 
     },
     delete: async (id) => {
-        const response = await fetch(`http://127.0.0.1:5000/api/whiskeys/${id}`,
+        const response = await fetch(`${API_BASE_URL}/api/whiskeys/${id}`,
             {
                 method: 'DELETE',
                 headers: {
