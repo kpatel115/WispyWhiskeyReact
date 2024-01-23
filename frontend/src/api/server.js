@@ -1,5 +1,5 @@
 const token = 'f6d5050a3ee2a77dd8912cf1cd1eff71d10e7e61d6d6a545';
-const API_BASE_URL ='http://localhost:3000'
+// const API_BASE_URL ='http://localhost:3000'
 export const server_calls = {
 
     get: async () => {
@@ -39,7 +39,8 @@ export const server_calls = {
         }
         return await response.json()
     },
-    update: async (id, data) => {
+    update: async (e, id, data) => {
+        e.preventDefault()
         const response = await fetch(`http://127.0.0.1:5000/api/whiskeys/${id}`,
             {
                 method: 'PUT',
@@ -54,7 +55,7 @@ export const server_calls = {
         if (!response.ok) {
             throw new Error('Failed to update data on server')
         }
-        return await response.json()
+        return  await response.json()
 
     },
     delete: async (id) => {

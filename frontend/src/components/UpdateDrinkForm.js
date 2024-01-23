@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useForm, Controller } from 'react-hook-form'
 
 
-const UpdateDrinkForm = ({ onSubmit, initialData, drinkId }) => {
+const UpdateDrinkForm = ({ onSubmit, initialData }) => {
 
   console.log(onSubmit)
   
-  const { control, handleSubmit, setValue } = useForm({
+  const { control } = useForm({
     defaultValues: initialData,
   });
 

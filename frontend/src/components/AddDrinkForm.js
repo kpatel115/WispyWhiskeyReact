@@ -1,7 +1,7 @@
 import React from 'react';
-import { server_calls } from '../api/server';
+// import { server_calls } from '../api/server';
 import { useForm } from 'react-hook-form'
-import axios from 'axios'
+// import axios from 'axios'
 const AddDrinkForm = ({onSubmit}) => {
 
   const { register, handleSubmit } = useForm()
