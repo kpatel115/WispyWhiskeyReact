@@ -1,10 +1,7 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form'
 
-
 const UpdateDrinkForm = ({ onSubmit, initialData }) => {
-
-  console.log(onSubmit)
   
   const { control } = useForm({
     defaultValues: initialData,

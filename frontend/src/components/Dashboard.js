@@ -21,7 +21,6 @@ const Dashboard = () => {
   const getData = async () => {
     const result = await server_calls.get();
     setData(result);
-    console.log(result[0].id);
   };
 
 

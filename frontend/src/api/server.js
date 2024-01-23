@@ -20,7 +20,7 @@ export const server_calls = {
     },
     //Method Calls - Post Update Delete and Get specific 
     create: async (data) => {
-        console.log(data)
+
         // will need to update this to a backend server like render.io after development
         const response = await fetch(`${API_BASE_URL}/api/whiskeys`,
             {
