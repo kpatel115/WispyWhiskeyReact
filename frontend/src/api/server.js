@@ -7,7 +7,6 @@ export const server_calls = {
         const response = await fetch(`${API_BASE_URL}/api/whiskeys`,
             {
                 method: 'GET',
-                mode: "cors",
                 headers: {
                     'Content-Type': 'application/json',
                     'x-access-token': `Bearer ${token}`,
@@ -39,12 +38,10 @@ export const server_calls = {
         }
         return await response.json()
     },
-    update: async (e, id, data) => {
-        e.preventDefault()
+    update: async (id, data) => {
         const response = await fetch(`${API_BASE_URL}/api/whiskeys/${id}`,
             {
                 method: 'PUT',
-                mode: "cors",
                 headers: {
                     'Content-Type': 'application/json',
                     'x-access-token': `Bearer ${token}`,
