@@ -15,7 +15,7 @@ import '@fontsource/roboto/700.css';
 const DataCard = ( {data, getData, onEdit, onDelete}) => {
   
     return (
-      <Card sx={{ minWidth: 275 }}>
+      <Card sx={{ maxWidth: 275 }}>
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Whiskey Drink Collection
