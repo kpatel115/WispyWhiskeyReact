@@ -73,10 +73,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='container w-full'>
+    <div className='container w-screen h-screen'>
 
       {/* Add or Update Drink */}
-      <div className='flex  flex-column justify-center items-center text-slate-500 text-center mx-9 my-9'>
+      <div className='flex-column justify-center items-center text-slate-500 text-center mx-9 my-9'>
         
         <button className=' bg-slate-300 text-slate-500 text-center mx-9' onClick={() => setIsModalVisible(true)}>
           {selectedDrink ? 'Edit Drink' : 'Add Drink'}
