@@ -5,7 +5,7 @@ export const Signin = () => {
     return (
         
       <div 
-      className="w-screen h-screen bg-cover bg-center z-10" style={{ backgroundImage: "url('/background.jpg')"}}>
+      className="h-full w-full bg-cover bg-center flex-column items-center justify-center" style={{ backgroundImage: "url('/background.jpg')"}}>
         
         <Navbar/>
         <div className=" bg-cover bg-amber-950 flex items-center justify-center h-full text-white text-center">
