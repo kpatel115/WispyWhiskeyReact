@@ -78,7 +78,7 @@ const Dashboard = () => {
       {/* Add or Update Drink */}
       <div className='text-slate-500 text-center justify-center'>
         
-        <button className=' bg-slate-300 text-slate-500 text-center m-9' onClick={() => setIsModalVisible(true)}>
+        <button className=' bg-slate-500 hover:bg-slate-700 text-white text-center m-9 rounded-lg' onClick={() => setIsModalVisible(true)}>
           {selectedDrink ? 'Edit Drink' : 'Add Drink'}
         
         </button>
@@ -104,8 +104,9 @@ const Dashboard = () => {
         }
 
       </Modal>
+      <div className='flex items-center justify-center'>
       {data && data.map((item, index) => (
-        <DataCard className='flex justify-center bg-slate-200 text-black' data={item} key={index} getData={getData}
+        <DataCard className='flex justify-center bg-slate-200 text-black max-w-md mx-auto' data={item} key={index} getData={getData}
 
           onEdit={(data) => {
             setSelectedDrink(data);
@@ -120,6 +121,7 @@ const Dashboard = () => {
           }}
         />
       ))}
+      </div>
 
 
     </div>
