@@ -78,7 +78,7 @@ const Dashboard = () => {
       {/* Add or Update Drink */}
       <div className='text-slate-500 text-center justify-center'>
         
-        <button className=' bg-slate-500 hover:bg-slate-700 text-white text-center p-9 m-9 rounded-lg' onClick={() => setIsModalVisible(true)}>
+        <button className=' bg-slate-500 hover:bg-slate-700 text-white text-center p-3 m-9 rounded-lg' onClick={() => setIsModalVisible(true)}>
           {selectedDrink ? 'Edit Drink' : 'Add Drink'}
         
         </button>
